@@ -1,7 +1,3 @@
-'''
-pip install gtts
-pip install pygame
-'''
 from gtts import gTTS
 import pygame
 import os
