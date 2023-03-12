@@ -1,1 +1,1 @@
-# ai-helper
+# ai-supporter
