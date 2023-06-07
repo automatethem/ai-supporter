@@ -16,7 +16,7 @@ def run(text):
     tts = gTTS(text=text, lang='ko', slow=False)
     file = f"speak_{random.random()}.mp3"
     tts.save(file)     
-    print(dir(tts))
+    #print(dir(tts))
  
     pygame.mixer.init()
     pygame.mixer.music.load(file)
