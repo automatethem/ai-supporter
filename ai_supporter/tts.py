@@ -13,17 +13,18 @@ def speak(text):
     thread.start()
 
 def run(text):
-    tts = gTTS(text=text, lang='ko', slow=False)
-    file = f"speak_{random.random()}.mp3"
-    tts.save(file)     
-    #print(dir(tts))
- 
-    pygame.mixer.init()
-    pygame.mixer.music.load(file)
-    pygame.mixer.music.play()
-    
-    while pygame.mixer.music.get_busy():
-        time.sleep(0.01)
-    
-    pygame.quit()
-    os.remove(file)    
+    try:
+        tts = gTTS(text=text, lang='ko', slow=False)
+        file = f"speak_{random.random()}.mp3"
+        tts.save(file)     
+        #print(dir(tts))
+
+        pygame.mixer.init()
+        pygame.mixer.music.load(file)
+        pygame.mixer.music.play()
+
+        while pygame.mixer.music.get_busy():
+            time.sleep(0.01)
+    finally:
+        pygame.quit()
+        os.remove(file)    
